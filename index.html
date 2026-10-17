@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Happy 23rd Birthday, Sushila! 🌹</title>
+  <title>Happy 23rd Birthday, Maisaab! 🌹</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,600;0,800;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -536,6 +536,85 @@
       box-shadow: 0 8px 20px rgba(255, 255, 255, 0.15);
     }
 
+    /* VIDEO GLASS CARD */
+    .video-glass-card {
+      background: rgba(30, 4, 12, 0.65);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(212, 175, 55, 0.35);
+      border-radius: 32px;
+      padding: 35px 28px;
+      margin-bottom: 45px;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6), 0 0 35px rgba(184, 29, 66, 0.25);
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .video-glass-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 100%;
+      background: radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.12), transparent 70%);
+      pointer-events: none;
+    }
+
+    .video-header {
+      margin-bottom: 22px;
+    }
+
+    .video-pill {
+      display: inline-block;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--gold-light);
+      background: rgba(212, 175, 55, 0.15);
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      padding: 6px 18px;
+      border-radius: 20px;
+      margin-bottom: 12px;
+      font-family: 'Cinzel Decorative', serif;
+    }
+
+    .video-title {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: 1.5rem;
+      color: #fff;
+      letter-spacing: 2px;
+      margin-bottom: 6px;
+    }
+
+    .video-frame {
+      position: relative;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7), 0 0 25px rgba(184, 29, 66, 0.3);
+      border: 2px solid rgba(212, 175, 55, 0.3);
+      background: #000;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .video-frame video {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 22px;
+      outline: none;
+    }
+
+    .video-caption {
+      margin-top: 18px;
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      color: var(--rose-soft);
+      font-size: 1.1rem;
+    }
+
     /* POETIC WISH LETTER */
     .letter-card {
       background: linear-gradient(135deg, rgba(35, 5, 14, 0.85), rgba(15, 2, 6, 0.92));
@@ -718,7 +797,7 @@
       </div>
     </div>
     <div class="mystery-tag">
-      <h3>Exclusively For Sushila Rai</h3>
+      <h3>Exclusively For Maisaab</h3>
       <p>✨ A Special 23rd Birthday Surprise Awaits ✨</p>
     </div>
     <div class="click-prompt">✦ Tap The Gift Box To Open ✦</div>
@@ -733,7 +812,7 @@
         <span>👑</span> CHAPTER 23 <span>👑</span>
       </div>
       <div class="subtitle-script">Dearest</div>
-      <h1 class="hero-name">Sushila Rai</h1>
+      <h1 class="hero-name">Maisaab</h1>
       <div class="age-celebrate">Happy 23rd Birthday</div>
       
       <div class="decorative-divider">
@@ -776,6 +855,21 @@
           <span>🕯️</span> Relight Candle
         </button>
       </div>
+    </section>
+
+    <!-- SPECIAL VIDEO SECTION (MID PAGE GLASS EFFECT) -->
+    <section class="video-glass-card">
+      <div class="video-header">
+        <span class="video-pill">A Precious Moment ✨</span>
+        <h2 class="video-title">Treasured Memory of Maisaab</h2>
+      </div>
+      <div class="video-frame">
+        <video id="birthday-video" playsinline controls preload="metadata">
+          <source src="video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <p class="video-caption">🌹 Every smile of yours brings warmth and joy to the world.</p>
     </section>
 
     <!-- POETIC BIRTHDAY LETTER -->
@@ -837,7 +931,7 @@
 
     <!-- FOOTER -->
     <footer>
-      Crafted with immense care & love for <strong>Sushila Rai</strong> on her 23rd Birthday.<br>
+      Crafted with immense care & love for <strong>Maisaab</strong> on her 23rd Birthday.<br>
       Rose petals falling endlessly in celebration of you <span>🌹</span>
     </footer>
 
@@ -1240,6 +1334,17 @@
       const active = sound.toggle();
       musicLabel.textContent = active ? 'Music: On' : 'Music: Muted';
     });
+
+    // Video audio coordination with background melody
+    const bdayVideo = document.getElementById('birthday-video');
+    if (bdayVideo) {
+      bdayVideo.addEventListener('play', () => {
+        if (sound.isPlaying) {
+          sound.stopMelody();
+          musicLabel.textContent = 'Music: Paused';
+        }
+      });
+    }
   </script>
 </body>
 </html>
